@@ -1,4 +1,15 @@
 <?php
- $vec = array(1,2,3,4);
- var_dump($vec);
+    require "./clases/persona.php";
+    require "./clases/policia.php";
+
+    Persona::Mostrar();
+
+    $persona = new Persona("Marina");
+    
+    
+    $persona->Saludar();
+
+    $persona->Mostrar();
+
+    Persona::saludar();
 ?>
