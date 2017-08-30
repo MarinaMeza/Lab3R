@@ -24,5 +24,5 @@
             $datos .= "<br>Profesor: ".$this->profesor->MostrarDatos();
             
             return $datos;
-    }
+        }
 }    

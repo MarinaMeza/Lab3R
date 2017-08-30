@@ -1,13 +1,13 @@
 <?php
     abstract class Persona{
-        protected $nombre;
-        protected $apellido;
-        protected $sexo;
+        protected $_nombre;
+        protected $_apellido;
+        protected $_sexo;
 
         public function __construct($pNombre, $pApellido, $pSexo){
-            $this->nombre = $pNombre;
-            $this->apellido = $pApellido;
-            $this->sexo = $pSexo;
+            $this->_nombre = $pNombre;
+            $this->_apellido = $pApellido;
+            $this->_sexo = $pSexo;
         }
 
         protected abstract function MostrarDatos();
