@@ -1,16 +1,16 @@
 <?php
 var_dump($_FILES);
+
 $destino = "./fotoUno.png";
+
 if ($_FILES['foto']['type'] == "image/png" && $_FILES['foto']['size'] > filesize('./fotoDos.png')) {
-    echo "hola";
+    //echo "hola";
     move_uploaded_file($_FILES["foto"]["tmp_name"], $destino);
-    //'C:/xampp/tmp/php2A4E.tmp','C:/xampp/htdocs/Prog3R.git/marcaDeAgua/');
-}
-/*
+}//valida tipo (png) y tamaño(mayor a la marca de agua)
 else
 { 
-    //
-}*/
+    echo "No pudo subirse el archivo.";
+}
 
 $im = imagecreatefrompng("fotoUno.png");
 $estampa = imagecreatefrompng('fotoTres.png');//fotoDos.png
