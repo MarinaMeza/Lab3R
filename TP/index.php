@@ -15,6 +15,16 @@
 
     $unaFabrica = new Fabrica("La Fabrica");
 
+    $unaFabrica->AgregarEmpleado($empleado01);
+    $unaFabrica->AgregarEmpleado($empleado02);
+    $unaFabrica->AgregarEmpleado($empleado03);
+    $unaFabrica->AgregarEmpleado($empleado04);
+    $unaFabrica->AgregarEmpleado($empleado05);
+    $unaFabrica->AgregarEmpleado($empleado06);
+    $unaFabrica->AgregarEmpleado($empleado07);
+    $unaFabrica->AgregarEmpleado($empleado08);
+    
+
     $datos = "";
     
     $datos .= $empleado01->ToString();
@@ -25,8 +35,8 @@
     $datos .= "<br>Sexo: ".$empleado01->getSexo();
     $datos .= "<br>Legajo: ".$empleado01->getLegajo();
     $datos .= "<br>Sueldo: ".$empleado01->getSueldo();
-    $datos .= "<br><br>";
-    $datos .= "HEK";
+    $datos .= "<br>";
+    $datos .= "<br> FABRICA  <br>".$unaFabrica->ToString();
     
     echo $datos;
 ?>

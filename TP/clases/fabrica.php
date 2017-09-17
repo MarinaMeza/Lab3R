@@ -4,7 +4,7 @@
     {
         private $_empleados = array();
         private $_razonSocial;
-
+        
         public function __construct($razonSocial)
         {
             $this->_razonSocial = $razonSocial;
@@ -28,7 +28,7 @@
 
         private function ElimininarEmpleadosRepetidos()
         {
-            array_unique($this->_empleados);
+            $this->_empleados = array_unique($this->_empleados, SORT_REGULAR);
         }
 
         public function CalcularSueldos()
@@ -36,7 +36,7 @@
             $acum = 0;
 
             foreach ($this->_empleados as $empleado) {
-                $acum += $empleado->_sueldo;
+                $acum += $empleado->getSueldo();
             }
 
             return $acum;
@@ -46,11 +46,15 @@
         {
             $datos = "";
 
-            $datos .= $this->_razonSocial." - ";
+            $datos .= $this->_razonSocial." <br> ";
 
             foreach ($this->_empleados as $empleado) {
                 $datos .= $empleado->ToString();
             }
+
+            $datos .= "<br>Total sueldos: ".$this->CalcularSueldos();
+            
+            return $datos;
         }
     }
 
