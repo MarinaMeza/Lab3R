@@ -1,5 +1,5 @@
 <?php
-    $operador = '/';
+    $operador = $_POST["operador"];
 
     $op1 = rand(1,15);
     $op2 = rand(1,15);
