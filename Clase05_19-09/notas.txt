@@ -1,0 +1,5 @@
+SELECT D.nombre, L.descripcion FROM `datos` AS D,`localidad` AS L WHERE D.localidad = L.id
+
+
+trae la columna nombre de la tabla datos y la columna descripcion de la tabla localidad
+en aquellos casos donde la localidad en datos sea igual al id en la tabla localidad
