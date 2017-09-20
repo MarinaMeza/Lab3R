@@ -3,3 +3,33 @@ SELECT D.nombre, L.descripcion FROM `datos` AS D,`localidad` AS L WHERE D.locali
 
 trae la columna nombre de la tabla datos y la columna descripcion de la tabla localidad
 en aquellos casos donde la localidad en datos sea igual al id en la tabla localidad
+
+
+1. Obtener los detalles completos de todos los productos, ordenados alfabéticamente.
+SELECT * FROM `productos` ORDER BY pNombre
+2. Obtener los detalles completos de todos los proveedores de ‘Quilmes’.
+SELECT * FROM `proveedores` WHERE localidad = 'Quilmes'
+3. Obtener todos los envíos en los cuales la cantidad este entre 200 y 300 inclusive.
+SELECT * FROM `envios` WHERE cantidad BETWEEN 200 AND 300
+4. Obtener la cantidad total de todos los productos enviados.
+SELECT SUM(cantidad) FROM envios
+5. Mostrar los primeros 3 números de productos que se han enviado.
+SELECT pNumero FROM envios LIMIT 3
+6. Mostrar los nombres de proveedores y los nombres de los productos enviados.
+SELECT P.nombre, Pr.pNombre FROM proveedores as P, envios AS E, productos AS Pr WHERE Pr.pNumero=E.pNumero AND P.numero=E.numero
+7. Indicar el monto (cantidad * precio) de todos los envíos.
+8. Obtener la cantidad total del producto 1 enviado por el proveedor 102.
+9. Obtener todos los números de los productos suministrados por algún proveedor de
+‘Avellaneda’.
+10. Obtener los domicilios y localidades de los proveedores cuyos nombres contengan la
+letra ‘I’.
+11. Agregar el producto numero 4, llamado ‘Chocolate’, de tamaño chico y con un precio
+de 25,35.
+12. Insertar un nuevo proveedor (únicamente con los campos obligatorios).
+13. Insertar un nuevo proveedor (107), donde el nombre y la localidad son ‘Rosales’ y ‘La
+Plata’.
+14. Cambiar los precios de los productos de tamaño ‘grande’ a 97,50.
+15. Cambiar el tamaño de ‘Chico’ a ‘Mediano’ de todos los productos cuyas cantidades
+sean mayores a 300 inclusive.
+16. Eliminar el producto número 1.
+17. Eliminar a todos los proveedores que no han enviado productos.
