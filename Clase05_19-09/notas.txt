@@ -18,18 +18,29 @@ SELECT pNumero FROM envios LIMIT 3
 6. Mostrar los nombres de proveedores y los nombres de los productos enviados.
 SELECT P.nombre, Pr.pNombre FROM proveedores as P, envios AS E, productos AS Pr WHERE Pr.pNumero=E.pNumero AND P.numero=E.numero
 7. Indicar el monto (cantidad * precio) de todos los envíos.
+SELECT SUM(P.precio*E.cantidad) FROM envios AS E INNER JOIN productos AS P ON P.pNumero=E.pNumero
 8. Obtener la cantidad total del producto 1 enviado por el proveedor 102.
+SELECT SUM(E.cantidad) FROM envios AS E, productos AS P WHERE P.pNumero=E.pNumero AND E.numero = 102 AND E.pNumero = 1
 9. Obtener todos los números de los productos suministrados por algún proveedor de
 ‘Avellaneda’.
+SELECT E.pNumero FROM envios AS E, proveedores as P WHERE P.numero=E.numero AND P.localidad = 'Avellaneda' 
 10. Obtener los domicilios y localidades de los proveedores cuyos nombres contengan la
 letra ‘I’.
+SELECT P.domicilio, P.localidad FROM proveedores as P WHERE P.nombre LIKE '%i%'
 11. Agregar el producto numero 4, llamado ‘Chocolate’, de tamaño chico y con un precio
 de 25,35.
+INSERT INTO `productos`(`pNombre`, `precio`, `tamaño`) VALUES ('Chocolate',25.35,'Chico')
 12. Insertar un nuevo proveedor (únicamente con los campos obligatorios).
+INSERT INTO `proveedores` VALUES ()
 13. Insertar un nuevo proveedor (107), donde el nombre y la localidad son ‘Rosales’ y ‘La
 Plata’.
+INSERT INTO `proveedores`(`numero`, `nombre`, `localidad`) VALUES (107,'Rosales','La plata')
 14. Cambiar los precios de los productos de tamaño ‘grande’ a 97,50.
+UPDATE `productos` SET `precio`=97.50 WHERE `tamaño`='Grande'
 15. Cambiar el tamaño de ‘Chico’ a ‘Mediano’ de todos los productos cuyas cantidades
 sean mayores a 300 inclusive.
+UPDATE productos AS P, envios as E SET P.tamaño='Mediano' WHERE P.pNumero=E.pNumero AND E.cantidad >= 300
 16. Eliminar el producto número 1.
+DELETE FROM productos WHERE pNumero=1
 17. Eliminar a todos los proveedores que no han enviado productos.
+DELETE FROM proveedores WHERE numero NOT IN (SELECT numero FROM envios)
