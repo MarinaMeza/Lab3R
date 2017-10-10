@@ -1,0 +1,17 @@
+PDO (PDOEjemplo)
+(trabajamos en la carpeta PDO2017)
+en bd estructura: tabla
+en pdo estructura: objeto
+pdo es la clase que tiene la conexion a la base de datos. no se abstrae de la bd. tiene que saber el tipo (MySQL, Oracle)
+cualquier cosa que devuelva la bd me lo va a convertir en objeto.
+
+un archivo cada uno
+llaman a la clase cd porque es la que tiene los metodos de pdo
+A -
+B - 
+M - 
+L - trae tabla
+
+si el objeto esta instanciado devuelve el objeto instanciado y si no lo instancia y lo devuelve.
+se puede instanciar una sola vez y es privado
+acceso a datos hace la conexion a la bd, la pasa la clase cd y la clase a traves de esa conexion genera las consultas
