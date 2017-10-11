@@ -15,3 +15,25 @@ L - trae tabla
 si el objeto esta instanciado devuelve el objeto instanciado y si no lo instancia y lo devuelve.
 se puede instanciar una sola vez y es privado
 acceso a datos hace la conexion a la bd, la pasa la clase cd y la clase a traves de esa conexion genera las consultas
+
+
+
+-----------------------------------------
+
+clase producto (trabaja con los datos, interactua con accesoADatos)
+(si lo uso con herencia, por ejemplo producto y productoAPI con los metodos guardar, modificar) (EL PARCIAL ES EL API)
+alta(insert), baja(delete), modificacion(update), listar todos(select), listar uno(select) esto es generico para toda clase
+en la misma clase o en otra->metodo guardar: si tiene id va modificar, si no tiene id va a alta. esto cambia de acuerdo a la cclase
+modificar: va primero a listar uno y despues a modificar.
+poner esto aparte sirve para que la funcionalidad de la clase producto sirva para distintas cosas
+
+ORM
+hibernate (java)
+eloquent (PHP)
+entity framework (.NET)
+
+
+
+-----------------------------------------
+APIrest
+composer-> slim framework (encapsulamos lo que este en productoAPI y lo guardamos aca)
