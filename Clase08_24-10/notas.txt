@@ -9,3 +9,6 @@ las rutas pasan a ser rutas logicas ( de rutas fisicas)
 API/saludo/---> saludo pasa a ser un parametro
 Puedo pasar parametros asi: API/saludo/{id}
 Cada uno de estos va a ser atendido por un metodo
+
+
+el DELETE funciono pasando los parametros en el pody por x-www-form-urlencoded
