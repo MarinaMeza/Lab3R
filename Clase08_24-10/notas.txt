@@ -1,0 +1,11 @@
+DATOS: PersonaDatos se ocupa de ABML, la comunicacion con la bd. accesoADatos()
+NEGOCIO: tiene Persona con el metodo guardar() que dependiendo del tipo de negocio llama directo
+al guuadar() de PersonaDatos o primero chequea si ya esta ingresado antes de lamar al guardar() de PersonaDatos.
+La logica tiene que estar separada de a funcionalidad del metodo guardar().
+VALIDACIONES: Los datos que se le pasan al guardar tienen que haber sido validados previamente (en una clase de validacion o validaciones en las clases)
+
+API Rest (GET, POST, PUT, DELETE...) Tiene que implementar PSR7(?)
+las rutas pasan a ser rutas logicas ( de rutas fisicas)
+API/saludo/---> saludo pasa a ser un parametro
+Puedo pasar parametros asi: API/saludo/{id}
+Cada uno de estos va a ser atendido por un metodo
